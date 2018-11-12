@@ -45,7 +45,7 @@ This will prompt you for a password. Enter it. We will be writing the password o
 Clone THIS repo into the Linux host machine. Just:
 
 ```bash
-git clone [THE_REPO_THAT_WE_WILL_BE_USING]
+git clone https://github.com/dangrondahl/ansible-hackathon
 ```
 
 and cd into this repo. The repo holds all the initial Ansible relevant files for this hackathon.
