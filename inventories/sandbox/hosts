@@ -1,0 +1,5 @@
+[win]
+srv1 ansible_host=[WINDOWS_SERVER_PRIVATE_IP]
+
+[linux]
+localhost ansible_connection=local
