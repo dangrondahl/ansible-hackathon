@@ -153,10 +153,10 @@ The task here is to create a file on the linux host machine using the [copy](htt
 
 This will put a "hello world" text into a file and place it under `/tmp/testfile.txt`
 
-Create a file in the root of your repo. Call it `opgave1-create-localfile.yml`. Run this command:
+Create a file in the root of your repo. Call it `lab1-create-localfile.yml`. Run this command:
 
 ```bash
-nano ./opgave1-create-localfile.yml
+nano ./lab1-create-localfile.yml
 ```
 
 Put in the code
@@ -177,7 +177,7 @@ Note the `hosts: linux`. This means that this playbook is running tasks on inven
 Now execute the playbook with
 
 ```bash
-ansible-playbook -i ./inventories/sandbox/hosts opgave1-create-localfile.yml
+ansible-playbook -i ./inventories/sandbox/hosts lab1-create-localfile.yml
 ```
 
 This will gather some facts of the target machine(s) so Ansible has some context of en environment that it is running in.
@@ -201,10 +201,10 @@ cat /tmp/testfile.txt
 
 Ok. So now you have created a localfile. Great. What if you would want a file on all your servers? And only the Windows machines. Easy.
 
-Let's create another playbook with the title `opgave2-copy-file-to-remote-servers.yml` with
+Let's create another playbook with the title `lab2-copy-file-to-remote-servers.yml` with
 
 ```bash
-nano ./opgave2-copy-file-to-remote-servers.yml
+nano ./lab2-copy-file-to-remote-servers.yml
 ```
 
 In that file put
@@ -236,7 +236,7 @@ The playbook above is using the "hejsa.txt" file came with the checkout.
 Execute the playbook with
 
 ```bash
-ansible-playbook -i ./inventories/sandbox/hosts opgave2-copy-file-to-remote-servers.yml
+ansible-playbook -i ./inventories/sandbox/hosts lab2-copy-file-to-remote-servers.yml
 ```
 
 After the execution you should have a file under the Windows Server "C:\\Temp" folder. Use Remote Desktop to verify it.
@@ -260,7 +260,7 @@ hvad var det første Michael Jackson sagde da han gik ind i en tøjbutik?
 
 I guess it's obivious that the {{ yourname }} is a variable that is used in the transformation. But how is it getting here? Well the playbook we are about to make says is all. It will have a user prompt input in the beginning and use that input in the transformation. The variable can de a default variable or be become present in the transformation context in a lots of different ways. Let's use the easiest way for now. A user input.
 
-Create a new playbook with the name "opgave3-jinja2-transformation-and-copy.yml". By the way... this playbook also copies the new file that we are creating to the Windows servers.
+Create a new playbook with the name "lab3-jinja2-transformation-and-copy.yml". By the way... this playbook also copies the new file that we are creating to the Windows servers.
 
 In the playbook put
 
@@ -305,7 +305,7 @@ The first task gets input from the user and creates a file on the local control 
 Execute your new playbook with
 
 ```bash
-ansible-playbook -i ./inventories/sandbox/hosts opgave3-jinja2-transformation-and-copy.yml
+ansible-playbook -i ./inventories/sandbox/hosts lab3-jinja2-transformation-and-copy.yml
 ```
 
 See the result with Remote Desktop
@@ -318,7 +318,7 @@ Enough talk... more action!
 
 Let's install some common tools on all our servers. That is the Windows servers. Let's use "chocolatey" for it. Hmmm. Hold your horses!!! There is a ready-to-use module for this called [win_chocolatey](https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html?highlight=win_chocolatey). Wow!
 
-Create a new playbook called `opgave4-install-commontools-via-chocolatey.yml`. 
+Create a new playbook called `lab4-install-commontools-via-chocolatey.yml`. 
 
 In this file put
 
@@ -344,7 +344,7 @@ Put in some of your favorite tools from Chocolatey. Goto [https://chocolatey.org
 Execute your new playbook with (you might have guessed it... hopefully)
 
 ```bash
-ansible-playbook -i ./inventories/sandbox/hosts opgave4-install-commontools-via-chocolatey.yml
+ansible-playbook -i ./inventories/sandbox/hosts lab4-install-commontools-via-chocolatey.yml
 ```
 
 Use Remote Desktop to see that your tools have been installed.
@@ -359,7 +359,4 @@ We have just installed the tools. What would we have to do to uninstall a tool a
 
 ### The End
 
-This concludes the Ansible-Hackathon for now. Comments suggestions and other related we can talk about afterwards. Come talk. Email. Slack. Morse-Code us!
-
-- Dan dgg@kamstrup.com
-- Bo boh@kamstrup.com
+This concludes the Ansible-Hackathon.
