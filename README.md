@@ -177,7 +177,7 @@ Note the `hosts: linux`. This means that this playbook is running tasks on inven
 Now execute the playbook with
 
 ```bash
-ansible-playbook -i ./inventories/stageing/hosts opgave1-create-localfile.yml
+ansible-playbook -i ./inventories/sandbox/hosts opgave1-create-localfile.yml
 ```
 
 This will gather some facts of the target machine(s) so Ansible has some context of en environment that it is running in.
